@@ -10,8 +10,10 @@ const {
   signupUser,
 } = require("../controllers/userController");
 
+const cors = require("cors");
 const router = express.Router();
 router.use(express.json());
+router.use(cors());
 
 // login route
 router.post("/login", loginUser);
