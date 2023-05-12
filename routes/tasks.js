@@ -11,7 +11,10 @@ const {
 } = require("../controllers/taskController");
 const requireAuth = require("../middleware/requireAuth");
 
+const cors = require("cors");
 const router = express.Router();
+router.use(express.json());
+router.use(cors());
 
 // require authentication for all routes
 router.use(requireAuth);
